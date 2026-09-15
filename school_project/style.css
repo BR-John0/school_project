@@ -1,0 +1,220 @@
+/* стул.ксго */
+html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #0a1f14;
+    color: #d4ffe0;
+    line-height: 1.6;
+}
+
+/* шляпа */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 6%;
+    background: #0a1f14;
+    border-bottom: 1px solid rgba(57, 255, 20, 0.2);
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.logo-shape {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #39ff14;
+    transform: rotate(45deg);
+}
+
+.accent {
+    color: #39ff14;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    color: #8fbfa0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #39ff14;
+}
+
+/* меню сверху */
+.upper_menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.upper_menu span {
+    width: 26px;
+    height: 2px;
+    background: #39ff14;
+}
+
+/* глав скрин */
+.title-text {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 6% 60px;
+    max-width: 800px;
+}
+
+.title-text-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.title-text-text {
+    color: #8fbfa0;
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+}
+
+.title-text-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid #39ff14;
+    background: transparent;
+    color: #39ff14;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    background: #39ff14;
+    color: #0a1f14;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
+}
+
+.btn-outline:hover {
+    background: rgba(57, 255, 20, 0.1);
+}
+
+/* секции */
+.section {
+    padding: 100px 6%;
+}
+
+.section-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: 800;
+}
+
+/* карточки */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #0f2e1e;
+    border: 1px solid rgba(57, 255, 20, 0.2);
+    padding: 40px 30px;
+    transition: border-color 0.3s;
+}
+
+.card:hover {
+    border-color: #39ff14;
+}
+
+.card h3 {
+    margin: 20px 0 12px;
+    color: #39ff14;
+    font-size: 1.2rem;
+}
+
+.card p {
+    color: #8fbfa0;
+}
+
+.card-icon {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #39ff14;
+}
+
+.card-icon.square { 
+    border-radius: 4px; 
+}
+.card-icon.circle { 
+    border-radius: 50%; 
+}
+.card-icon.triangle {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    border: none;
+    background: #39ff14;
+}
+
+/* услугаю */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service {
+    background: #0f2e1e;
+    border: 1px solid rgba(57, 255, 20, 0.2);
+    padding: 40px 30px;
+}
+
+
+/* пятки */
+.footer {
+    text-align: center;
+    padding: 40px 6%;
+    border-top: 1px solid rgba(57, 255, 20, 0.2);
+    color: #8fbfa0;
+    font-size: 0.9rem;
+}
