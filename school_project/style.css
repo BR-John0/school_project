@@ -1,4 +1,18 @@
 /* стул.ксго */
+
+:root {
+    --white: #ffffff; /*белый*/
+    --light-gray: #e9e9e9; /*светло-серый*/
+    --gray: #a6aaaf; /*серый*/
+    --lighter-gray: #c0c0c0; /*светло-серый*/
+    --dark-gray: #6b7280; /*тёмно-серый*/
+    --dark: #1f2937; /*тёмный*/
+    --blue: #2563eb; /*синий*/
+    --light-blue: #7097ec; /*светло-синий*/
+    --dark-blue: #122d69; /*тёмно-синий*/
+    --darker-blue: #0b1d44; /*тёёёёмный синий*/
+}
+
 html {
     scroll-behavior: smooth;
     margin: 0;
@@ -8,8 +22,8 @@ html {
 
 body {
     font-family: 'Segoe UI', Tahoma, sans-serif;
-    background: #0a1f14;
-    color: #d4ffe0;
+    background: var(--light-gray);
+    color: var(--dark);
     line-height: 1.6;
 }
 
@@ -23,8 +37,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 6%;
-    background: #0a1f14;
-    border-bottom: 1px solid rgba(57, 255, 20, 0.2);
+    background: var(--light-gray);
+    border-bottom: 3px solid var(--blue);
     z-index: 100;
 }
 
@@ -39,12 +53,12 @@ body {
 .logo-shape {
     width: 20px;
     height: 20px;
-    border: 2px solid #39ff14;
+    border: 2px solid var(--blue);
     transform: rotate(45deg);
 }
 
 .accent {
-    color: #39ff14;
+    color: var(--blue);
 }
 
 .nav {
@@ -53,7 +67,7 @@ body {
 }
 
 .nav-link {
-    color: #8fbfa0;
+    color: var(--blue);
     text-decoration: none;
     font-size: 0.95rem;
     transition: color 0.3s;
@@ -61,7 +75,7 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-    color: #39ff14;
+    color: var(--dark-blue);
 }
 
 /* меню сверху */
@@ -77,7 +91,7 @@ body {
 .upper_menu span {
     width: 26px;
     height: 2px;
-    background: #39ff14;
+    background: var(--dark-blue);
 }
 
 /* фигуры на фон */
@@ -91,8 +105,8 @@ body {
 
 .shape {
     position: absolute;
-    border: 1px solid #39ff14;
-    opacity: 0.15;
+    border: 2px solid var(--blue);
+    opacity: 0.2;
     animation: rotate 30s linear infinite;
 }
 
@@ -144,14 +158,36 @@ body {
     to { transform: rotate(360deg); }
 }
 
+.side-bar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 18px;
+    background: var(--blue);
+    z-index: 200;
+}
+
+.side-bar-left {
+    left: 0;
+}
+
+.side-bar-right {
+    right: 0;
+}
+
 /* глав скрин */
 .title-text {
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 120px 6% 60px;
+    align-items: center;
+    text-align: center;
+    padding: 100px calc(6% + 12px) 60px;
     max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .title-text-title {
@@ -161,7 +197,7 @@ body {
     font-weight: 800;
 }
 .title-text-text {
-    color: #8fbfa0;
+    color: var(--dark-gray);
     font-size: 1.1rem;
     margin-bottom: 35px;
 }
@@ -170,31 +206,32 @@ body {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .btn {
     padding: 14px 32px;
     font-size: 1rem;
     font-weight: 600;
-    border: 2px solid #39ff14;
+    border: 2px solid var(--dark-blue);
     background: transparent;
-    color: #39ff14;
+    color: var(--dark-blue);
     cursor: pointer;
     transition: all 0.3s;
     text-transform: uppercase;
 }
 
 .btn-primary {
-    background: #39ff14;
+    background: var(--blue);
     color: #0a1f14;
 }
 
 .btn-primary:hover {
-    box-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
+    box-shadow: 0 0 20px var(--light-blue);
 }
 
 .btn-outline:hover {
-    background: rgba(57, 255, 20, 0.1);
+    background: rgba(20, 130, 255, 0.2);
 }
 
 /* секции */
@@ -219,30 +256,26 @@ body {
 }
 
 .card {
-    background: #0f2e1e;
-    border: 1px solid rgba(57, 255, 20, 0.2);
+    background: var(--lighter-gray);
+    border: 4px solid rgba(20, 188, 255, 0.5);
     padding: 40px 30px;
     transition: border-color 0.3s;
 }
 
 .card:hover {
-    border-color: #39ff14;
+    border: 4px dashed var(--blue);
 }
 
 .card h3 {
     margin: 20px 0 12px;
-    color: #39ff14;
+    color: var(--blue);
     font-size: 1.2rem;
-}
-
-.card p {
-    color: #8fbfa0;
 }
 
 .card-icon {
     width: 45px;
     height: 45px;
-    border: 2px solid #39ff14;
+    border: 2px solid var(--blue);
 }
 
 .card-icon.square { 
@@ -254,7 +287,7 @@ body {
 .card-icon.triangle {
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     border: none;
-    background: #39ff14;
+    background: var(--light-blue);
 }
 
 .card-icon.romb {
@@ -272,17 +305,52 @@ body {
 }
 
 .service {
-    background: #0f2e1e;
-    border: 1px solid rgba(57, 255, 20, 0.2);
+    background: var(--lighter-gray);
+    border: 4px solid rgba(20, 188, 255, 0.5);
     padding: 40px 30px;
     text-align: center;
+}
+
+.service:hover {
+    border: 4px dashed var(--blue);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* контакты */
+.contact-form input,
+.contact-form textarea {
+    background: var(--white);
+    border: 2px solid var(--gray);
+    padding: 16px;
+    color: var(--dark);
+    font-family: inherit;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border: 2px dashed var(--light-blue);
+}
+
+.contact-form .btn {
+    align-self: center;
 }
 
 /* пятки */
 .footer {
     text-align: center;
     padding: 40px 6%;
-    border-top: 1px solid rgba(57, 255, 20, 0.2);
-    color: #8fbfa0;
+    border-top: 1px solid var(--dark-blue);
+    color: var(--gray);
     font-size: 0.9rem;
 }
